@@ -73,7 +73,7 @@ The module has **no third-party dependencies**. No Composer, no JavaScript libra
 ### Step 1 — Download
 
 ```bash
-git clone https://github.com/grady-trongate/trongate-events-module-and-calendar.git
+git clone https://github.com/trongate/trongate-events-module-and-calendar.git
 ```
 
 Or use **Code → Download ZIP** on the GitHub page and extract it.
