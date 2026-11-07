@@ -88,8 +88,6 @@
 .cal-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 1px;
-  background-color: #e6e6e6;
 }
 
 .cal-day {
@@ -98,7 +96,24 @@
   padding: 8px 10px;
   min-width: 0;
   overflow: hidden;
+  border-right: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
   transition: background-color 0.15s ease;
+}
+
+/*
+   The grid lines are drawn by the cells themselves rather than by a 1px gap
+   showing the grid's background colour.  A 1px gap is subject to subpixel
+   rounding and some browsers dropped the odd row separator; borders are
+   snapped to the device pixel grid and always render.
+   The outer edges are supplied by .cal-card, so they are removed here.
+*/
+.cal-grid > :nth-child(7n) {
+  border-right: 0;
+}
+
+.cal-grid > :nth-last-child(-n + 7) {
+  border-bottom: 0;
 }
 
 /* Days with no events are links through to the event creation form. */
